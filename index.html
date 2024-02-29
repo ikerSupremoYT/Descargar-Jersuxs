@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos</title>
+  <link rel="stylesheet" href="css/Inicio.css">
+</head>
+<body>
+    <header>
+        <h1>Artículos</h1>
+    </header>
+
+    <div id="article-container">
+        <ul id="article-list"></ul>
+
+        <div id="article-form">
+            <label for="title">Título:</label>
+            <input type="text" id="title">
+
+            <label for="content">Contenido:</label>
+            <textarea id="content"></textarea>
+
+            <button onclick="addArticle()">Crear Artículo</button>
+        </div>
+    </div>
+
+    <script>
+        const articles = [
+            { title: "MalwareBytes Premium Free (Legal)", content: "En este artículo, discutiremos la importancia de utilizar software de seguridad y cómo obtener MalwareBytes Premium de forma legal y gratuita." }
+            // Puedes añadir más artículos según sea necesario
+        ];
+
+        function addArticle() {
+            const titleInput = document.getElementById('title');
+            const contentInput = document.getElementById('content');
+
+            const newArticle = {
+                title: titleInput.value,
+                content: contentInput.value
+            };
+
+            articles.push(newArticle);
+            displayArticles();
+
+            titleInput.value = '';
+            contentInput.value = '';
+        }
+
+        function displayArticles() {
+            const articleList = document.getElementById('article-list');
+            articleList.innerHTML = '';
+
+            articles.forEach((article, index) => {
+                const li = document.createElement('li');
+                li.className = 'article';
+                li.innerHTML = `<h2 onclick="viewArticle(${index})">${article.title}</h2><p>${article.content}</p>`;
+                articleList.appendChild(li);
+            });
+        }
+
+        function viewArticle(index) {
+            // Redirige a la página específica del artículo
+            window.location.href = `articulos/article${index}.html`;
+        }
+
+        displayArticles();
+    </script>
+</body>
+</html>

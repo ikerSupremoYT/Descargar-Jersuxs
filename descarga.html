@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarga</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        #download-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #download-message {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #download-button {
+            padding: 15px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #download-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="download-container">
+        <p id="download-message">Dale click a este botón para descargar</p>
+        <button id="download-button" onclick="downloadFile()">Descargar</button>
+    </div>
+
+  <script>
+      function downloadFile() {
+          // Redirige a la URL de descarga
+          window.location.href = "https://mega.nz/file/VOVTEA5B#AHqRubXVF3zL6wEGU4duKNMfrTqzlwrekqdgAkur_J8";
+      }
+  </script>
+</body>
+</html>
